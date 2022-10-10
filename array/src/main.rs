@@ -93,4 +93,18 @@ fn main() {
     // for (i, name) in names.iter().enumerate() {
     //     println!("array index ke-{i}: {name}");
     // }
+
+    // -----------------------
+
+    // let data_arr = [
+    //     ["salad", "fried rice"],
+    //     ["apple", "coconut"],
+    //     ["spinach", "jalapeno"],
+    // ];
+    // for sub_arr in data_arr {
+    //     for el in sub_arr {
+    //         print!("{el}, ");
+    //     }
+    //     println!();
+    // }
 }
