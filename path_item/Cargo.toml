@@ -1,5 +1,5 @@
 [package]
-name = "module_system_paths_items"
+name = "path_item"
 version = "0.1.0"
 edition = "2021"
 
