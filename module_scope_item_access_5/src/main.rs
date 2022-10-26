@@ -28,7 +28,7 @@ mod module_b {
         pub fn my_func() {
             println!("call `module_b::submodule_b_two::my_func()`");
 
-            // current scope adalah module `submodule_b_two`.
+            // current module scope adalah module `submodule_b_two`.
             // keyword `super` disini mengarah ke parent scope, yaitu `module`.
             //
             // statement `super::my_func()` berikut adalah
@@ -55,13 +55,13 @@ mod module_b {
         // semua fungsi yang didefinisikan akan di call dalam blok kode ini.
         print!("call `my::run_all_funcs()`");
         
-        // keyword `self` merepresentasikan current scope.
+        // keyword `self` merepresentasikan current module scope.
         // menjadikan dua statement berikut adalah ekuivalen:
         // `my_func()` adalah ekuivalen dengan `self::my_func()`.
         my_func();
         self::my_func();
 
-        // current scope adalah `module_b`.
+        // current module scope adalah `module_b`.
         // keyword `super` disini mengarah ke parent scope, yaitu root atau scope paling luar.
         //
         // statement `super::my_func()` berikut adalah

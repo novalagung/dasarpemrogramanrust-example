@@ -39,4 +39,8 @@ fn main() {
     // println!("hobbies : {:?}", hobbies);
     // println!("is_male : {:?}", is_male);
 
+    // ==========================
+
+    // let tuple_d = ();
+    // println!("{:?}", tuple_d);
 }
