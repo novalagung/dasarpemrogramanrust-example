@@ -25,8 +25,9 @@ impl Car {
     }
 
     pub fn say_hello(&self, name: String) {
-        println!("hello {},\ncongrats with your new car {}", name, self.info());
-        println!("vroooom vroooooooommmmm!")
+        println!("hello {}", name);
+        println!("congrats with your new car {}", self.info());
+        println!("vroooom vroooooooommmmm!");
     }
 
     pub fn set_manufacture_year(&mut self, year: i32) {
