@@ -6,4 +6,7 @@ fn main() {
     let blue = model::Color::blue();
 
     println!("{:#?} {:#?} {:#?}", red, green, blue);
+    
+    let random_color = model::Color::new(12, 25, 47);
+    println!("{:#?} ", random_color);
 }
