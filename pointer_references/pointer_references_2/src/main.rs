@@ -2,7 +2,7 @@ fn main() {
     let mut number = 24;
     println!("number: {}", number);
 
-    let pointer_number = &mut number;
+    let pointer_number: &mut i32 = &mut number;
     println!("pointer_number: {:p}", pointer_number);
 
     *pointer_number = 12;
