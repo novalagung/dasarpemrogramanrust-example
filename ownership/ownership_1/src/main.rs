@@ -1,21 +1,15 @@
-fn do_something() {
-    let some_data = "one";
-    // ...
-}
-
 fn main() {
-    let some_data = "two";
-    // ...
+    let x = 24;
+    let y = x;
+    println!("x: {:?}, y: {:?}", x, y);
 
-    {
-        let some_data = "three";
-        // ...
-    }
+    let a = String::from("hello rust");
+    let b = a;
+    println!("a: {:?}, b: {:?}", a, b);
 
-    do_something();
-
-    if true {
-        let some_data = "four";
-        // ...
-    }
+    #[derive(Debug)]
+    struct MyStruct;
+    let g = MyStruct{};
+    let h = g;
+    println!("g: {:?}, h: {:?}", g, h);
 }
