@@ -1,5 +1,5 @@
 [package]
-name = "borrowing_3"
+name = "generics"
 version = "0.1.0"
 edition = "2021"
 
