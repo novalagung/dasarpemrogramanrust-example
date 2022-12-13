@@ -17,4 +17,36 @@ fn main() {
     };
 
     println!("a: {}", a);
+
+    {
+        let b = 12;
+        let mut total = 0;
+
+        {
+            let c = 13;
+
+            {
+                let d = 14;
+                total = b + c + d;
+            }
+        }
+
+        println!("{total}")
+    }
+
+    {
+        let mut total = 24;
+
+        'append_with_even_number: {
+            let n = rand::thread_rng().gen_range(0..100);
+    
+            if n % 2 == 1 {
+                break 'append_with_even_number
+            }
+
+            total = n
+        }
+
+        println!("{total}");
+    }
 }
