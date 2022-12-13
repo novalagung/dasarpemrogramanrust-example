@@ -76,6 +76,12 @@ fn main() {
 
     // ========================
 
+    // let vec_population = vec![2, 1, 3];
+    // let vec_sample = &vec_population[0..1];
+    // println!("{:?}", vec_sample); // [2]
+
+    // ========================
+
     // use std::collections::VecDeque;
 
     // let mut vec_10 = VecDeque::from(vec!["a", "b", "c"]);
