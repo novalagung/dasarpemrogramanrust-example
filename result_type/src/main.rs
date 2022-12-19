@@ -6,13 +6,13 @@ enum MathError {
 }
 
 fn main() {
-    // {
-    //     let result1 = divider(10.0, 5.0);
-    //     println!("result: {:?}", result1);
+    {
+        let result1 = divider(10.0, 5.0);
+        println!("result: {:?}", result1);
     
-    //     let result2: Result<f64, MathError> = divider(10.0, 0.0);
-    //     println!("result: {:?}", result2);
-    // }
+        let result2: Result<f64, MathError> = divider(10.0, 0.0);
+        println!("result: {:?}", result2);
+    }
 
     // {
     //     let result = divider(10.0, 5.0);
@@ -69,12 +69,12 @@ fn main() {
     //     // result: 0
     // }
 
-    {
-        let result = divider(10.0, 0.0);
-        let number = result.unwrap_or_else(|_| 0.0);
-        println!("result: {}", number);
-        // result: 0
-    }
+    // {
+    //     let result = divider(10.0, 0.0);
+    //     let number = result.unwrap_or_else(|_| 0.0);
+    //     println!("result: {}", number);
+    //     // result: 0
+    // }
 }
 
 fn divider(a: f64, b: f64) -> Result<f64, MathError> {

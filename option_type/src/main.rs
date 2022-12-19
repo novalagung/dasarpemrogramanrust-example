@@ -25,11 +25,28 @@ fn main() {
 
     // {
     //     let result1 = divider(10, 5);
-    //     if result1 != None {
-    //         let number = result1.unwrap();
-    //         println!("result: {}", number);
+    //     match result1 {
+    //         None         => println!("cannot divide by 0"),
+    //         Some(2)      => println!("the result is 2"),
+    //         Some(x) => println!("result: {x}"),
     //     }
     // }
+
+    {
+        let result1 = divider(10, 5);
+        if result1 != None {
+            let number = result1.unwrap();
+            println!("result: {}", number);
+        }
+        if result1.is_some() {
+            let number = result1.unwrap();
+            println!("result: {}", number);
+        }
+        if !result1.is_none() {
+            let number = result1.unwrap();
+            println!("result: {}", number);
+        }
+    }
 
     // {
     //     let result2 = divider(10, 0);
