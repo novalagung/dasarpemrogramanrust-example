@@ -6,13 +6,13 @@ enum MathError {
 }
 
 fn main() {
-    {
-        let result1 = divider(10.0, 5.0);
-        println!("result: {:?}", result1);
+    // {
+    //     let result1 = divider(10.0, 5.0);
+    //     println!("result: {:?}", result1);
     
-        let result2: Result<f64, MathError> = divider(10.0, 0.0);
-        println!("result: {:?}", result2);
-    }
+    //     let result2: Result<f64, MathError> = divider(10.0, 0.0);
+    //     println!("result: {:?}", result2);
+    // }
 
     // {
     //     let result = divider(10.0, 5.0);
@@ -31,6 +31,17 @@ fn main() {
     //         Ok(2.0)                        => println!("the result is 2"),
     //         Ok(x)                     => println!("result: {x:.2}"),
     //     }
+    // }
+
+    // {
+    //     let result: f64 = match divider(10.0, 5.0) {
+    //         Err(m) => {
+    //             println!("ERROR! {:?}", m);
+    //             0.0
+    //         },
+    //         Ok(r) => r,
+    //     };
+    //     println!("result: {:?}", result);
     // }
 
     // {
