@@ -1,3 +1,5 @@
+#![forbid(unsafe_code)]
+
 #[allow(unused_imports)]
 use std::fmt::Display;
 
@@ -17,4 +19,7 @@ fn main() {
     let name = "noval agung";
 
     say_hello();
+    
+    #[allow(unsafe_code)]
+    unsafe{};
 }
