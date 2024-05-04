@@ -26,4 +26,21 @@ fn main() {
     {
         util::say_something();
     }
+
+    if cfg!(debug_assertions) {
+        println!("Debugging....")
+    } else {
+        println!("Release....")    
+    }
+    
+    #[cfg(debug_assertions)]
+    {
+        println!("Simulate Load env file...");
+    }
+    
+    
+    #[cfg(not(debug_assertions))]
+    {
+        println!("🦀")
+    }
 }
