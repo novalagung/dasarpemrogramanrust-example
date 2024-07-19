@@ -1,5 +1,5 @@
 [package]
-name = "attribute_cfg"
+name = "attribute_cfg_target_os"
 version = "0.1.0"
 edition = "2021"
 
