@@ -1,48 +1,14 @@
-mod calculation_spec;
-mod two_dimensional;
+use std::fmt::{write, Display};
 
-use crate::calculation_spec::Area;
+struct Wrapper(Vec<String>);
 
-fn main() {
-    // let circle_one = two_dimensional::Circle{ radius: 10 };
-    let circle_one = new_circle(5);
-    // println!("circle area: {}", circle_one.calculate());
-    calculate_and_print_result("circle".to_string(), &circle_one);
-
-    // let square_one = two_dimensional::Square{ length: 5 };
-    let square_one = new_square(10);
-    // println!("square area: {}", square_one.calculate());
-    calculate_and_print_result("square".to_string(), &square_one);
-}
-
-fn new_circle(radius: i32) -> impl Area {
-    let data = two_dimensional::Circle{
-        radius
-    };
-    data
-}
-
-fn new_square(length: i32) -> impl Area {
-    two_dimensional::Square{
-        length
+impl Display for Wrapper {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write(f, format_args!("{:?}", self.0))
     }
 }
 
-fn calculate_and_print_result(name: String, item: &impl Area) {
-    println!("{} area: {}", name, item.calculate());
-}
-
-fn calculate_and_print_result2<T: Area>(name: String, item: &T) {
-    println!("{} area: {}", name, item.calculate());
-}
-
-fn calculate_and_print_result3<T>(name: String, item: &T) where T: Area {
-    println!("{} area: {}", name, item.calculate());
-}
-
-fn calculate_and_print_result4<T>(name: String, item: &T)
-where
-    T: Area,
-{
-    println!("{} area: {}", name, item.calculate());
+fn main() {
+    let v = Wrapper(vec![String::from("a"), String::from("b")]);
+    println!("{}", v)
 }
