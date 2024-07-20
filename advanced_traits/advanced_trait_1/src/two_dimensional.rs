@@ -3,7 +3,7 @@ pub struct Circle {
 }
 
 impl crate::calculation_spec::Area for Circle {
-    fn calculate(&self) -> f64 {
+    fn calculate_area(&self) -> f64 {
         3.14 * (self.radius.pow(2) as f64)
     }
 }
@@ -13,7 +13,7 @@ pub struct Square {
 }
 
 impl crate::calculation_spec::Area for Square {
-    fn calculate(&self) -> f64 {
+    fn calculate_area(&self) -> f64 {
         self.length.pow(2) as f64
     }
 }
