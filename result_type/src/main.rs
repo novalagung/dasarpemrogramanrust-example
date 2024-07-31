@@ -86,6 +86,11 @@ fn main() {
     //     println!("result: {}", number);
     //     // result: 0
     // }
+
+    {
+        let result = divide_and_print(10.0, 1.0);
+        // result: 10
+    }
 }
 
 fn divider(a: f64, b: f64) -> Result<f64, MathError> {
@@ -95,4 +100,18 @@ fn divider(a: f64, b: f64) -> Result<f64, MathError> {
 
     let result = a / b;
     return Ok(result);
+}
+
+fn divide_and_print(a: f64, b: f64) -> Result<(), MathError> {
+    let res = divider(a, b);
+    match res {
+        Err(m) => {
+            println!("ERROR! {:?}", m);
+            Err(m)
+        },
+        Ok(n) => {
+            println!("result: {}", n);
+            Ok(())
+        },
+    }
 }
