@@ -1,13 +1,16 @@
+use crate::file_action_constant;
+use crate::file_utility;
+
 use std::path::Path;
 use std::fs;
 
 pub fn print_files() -> Result<(), String> {
-    let path = Path::new("./files");
+    let path = Path::new(file_action_constant::FOLDER_BASEPATH);
 
     // if files folder not exists, create it
     if !path.is_dir() {
 
-        // error handling using match
+        // error handling using basic implementation of keyword match
         match fs::create_dir(path) {
             Err(err) => {
                 return Err(err.to_string());
@@ -28,7 +31,7 @@ pub fn print_files() -> Result<(), String> {
     for file in dir {
         count = count + 1;
 
-        // error handling using match
+        // error handling using basic implementation of keyword match
         match file {
             Err(err) => {
                 return Err(err.to_string());
@@ -40,22 +43,22 @@ pub fn print_files() -> Result<(), String> {
     };
 
     if count == 0 {
-        print!("No files");
+        println!("No files");
     }
 
     Ok(())
 }
 
 pub fn create_file() -> Result<(), String> {
-    let path = Path::new("./files");
+    let path = Path::new(file_action_constant::FOLDER_BASEPATH);
 
     print!("Enter filename: ");
     
     // error handling using operator ?
-    let _ = crate::file_utility::stdout_flush()?;
+    let _ = file_utility::stdout_flush()?;
 
     // error handling using guard method
-    let filename = match crate::file_utility::read_entry() {
+    let filename = match file_utility::read_entry() {
         Err(err) => {
             return Err(err.to_string());
         },
@@ -65,17 +68,17 @@ pub fn create_file() -> Result<(), String> {
     print!("Enter file content: ");
     
     // error handling using operator ?
-    let _ = crate::file_utility::stdout_flush()?;
+    let _ = file_utility::stdout_flush()?;
 
     // error handling using guard method
-    let content = match crate::file_utility::read_entry() {
+    let content = match file_utility::read_entry() {
         Err(err) => {
             return Err(err.to_string());
         },
         Ok(txt) => txt,
     };
 
-    // error handling using match
+    // error handling using basic implementation of keyword match
     match fs::write(path.join(filename), content) {
         Err(err) => {
             return Err(err.to_string());
@@ -87,15 +90,15 @@ pub fn create_file() -> Result<(), String> {
 }
 
 pub fn read_file() -> Result<(), String> {
-    let path = Path::new("./files");
+    let path = Path::new(file_action_constant::FOLDER_BASEPATH);
 
     print!("Enter filename: ");
     
     // error handling using operator ?
-    let _ = crate::file_utility::stdout_flush()?;
+    let _ = file_utility::stdout_flush()?;
 
     // error handling using guard method
-    let filename = match crate::file_utility::read_entry() {
+    let filename = match file_utility::read_entry() {
         Err(err) => {
             return Err(err.to_string());
         },
@@ -105,7 +108,8 @@ pub fn read_file() -> Result<(), String> {
     // error handling using guard method
     let content = match fs::read_to_string(path.join(filename)) {
         Err(err) => {
-            return Err(err.to_string());
+            println!("ERROR. {:?}", err.to_string());
+            return Ok(());
         },
         Ok(txt) => txt,
     };
@@ -116,25 +120,26 @@ pub fn read_file() -> Result<(), String> {
 }
 
 pub fn delete_file() -> Result<(), String> {
-    let path = Path::new("./files");
+    let path = Path::new(file_action_constant::FOLDER_BASEPATH);
 
     print!("Enter filename: ");
     
     // error handling using operator ?
-    let _ = crate::file_utility::stdout_flush()?;
+    let _ = file_utility::stdout_flush()?;
 
     // error handling using guard method
-    let filename = match crate::file_utility::read_entry() {
+    let filename = match file_utility::read_entry() {
         Err(err) => {
             return Err(err.to_string());
         },
         Ok(txt) => txt,
     };
 
-    // error handling using match
+    // error handling using basic implementation of keyword match
     match fs::remove_file(path.join(filename)) {
         Err(err) => {
-            return Err(err.to_string());
+            println!("ERROR. {:?}", err.to_string());
+            return Ok(());
         },
         Ok(_) => {
             println!("File deleted");

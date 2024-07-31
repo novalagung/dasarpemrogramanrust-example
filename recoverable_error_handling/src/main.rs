@@ -29,7 +29,7 @@ fn run_program() -> Result<(), String> {
             Ok(txt) => txt,
         };
 
-        // error handling using match
+        // error handling using basic implementation of keyword match
         let cmd_result = file_action_constant::validate_command(&user_entry);
         match cmd_result {
             Err(err) => {
@@ -67,5 +67,9 @@ fn run_program() -> Result<(), String> {
 }
 
 fn main() {
-    let _ = run_program();
+    // error handling using basic implementation of keyword match
+    match run_program() {
+        Err(err) => panic!("ERRROR {:?}", err),
+        Ok(_) => {}
+    }
 }

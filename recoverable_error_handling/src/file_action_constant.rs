@@ -1,3 +1,5 @@
+pub const FOLDER_BASEPATH: &str = "./files";
+
 pub enum Command {
     PrintFiles,
     CreateFile,
