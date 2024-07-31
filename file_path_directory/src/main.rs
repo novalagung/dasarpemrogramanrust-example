@@ -138,6 +138,4 @@ fn main() {
             println!("file name: {:?}, file path: {:?}", item.file_name(), item.path().display())
         }
     }
-
-
 }

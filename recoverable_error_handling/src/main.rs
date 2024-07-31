@@ -1,65 +1,27 @@
-use std::io;
-use std::io::Write;
-
-fn print_welcome_message() {
-    println!("Welcome to file maker app!");
-    println!();
-
-    println!("Available command:");
-    println!("1. Print files");
-    println!("2. Read file");
-    println!("3. Delete file");
-    println!("9. Exit");
-}
-
-enum Command {
-    PrintFiles,
-    ReadFile,
-    DeleteFile,
-    ExitProgram,
-}
-
-fn stdout_flush() -> Result<(), String> {
-    match io::stdout().flush() {
-        Err(err) => Err(err.to_string()),
-        Ok(()) => Ok(())
-    }
-}
-
-fn read_entry() -> Result<String, String> {
-    let mut message = String::new();
-    let reader_res = io::stdin().read_line(&mut message);
-
-    let content = match reader_res {
-        Ok(_) => message.trim().to_string(),
-        Err(err) => {
-            return Err(err.to_string())
-        }
-    };
-
-    return Ok(content)
-}
-
-fn validate_command(cmd: &str) -> Result<Command, &'static str> {
-    match cmd {
-        "1" => Ok(Command::PrintFiles),
-        "2" => Ok(Command::ReadFile),
-        "3" => Ok(Command::DeleteFile),
-        "9" => Ok(Command::ExitProgram),
-        _ => Err("unrecognized command")
-    }
-}
+mod file_action_constant;
+mod file_manager;
+mod file_utility;
 
 fn run_program() -> Result<(), String> {
+    println!("Welcome to file maker app!");
+
     loop {
+        println!();
+        println!("Available command:");
+        println!("1. Print files");
+        println!("2. Create file");
+        println!("3. Read file");
+        println!("4. Delete file");
+        println!("9. Exit");
+
         println!();
         print!("Enter your command: ");
 
         // error handling using operator ?
-        let _ = stdout_flush()?;
+        let _ = file_utility::stdout_flush()?;
 
         // error handling using guard method
-        let user_entry = match read_entry() {
+        let user_entry = match file_utility::read_entry() {
             Err(err) => {
                 println!("ERROR. unable to continue the program. {}", err);
                 continue;
@@ -67,8 +29,8 @@ fn run_program() -> Result<(), String> {
             Ok(txt) => txt,
         };
 
-        // error handling using common match implementation
-        let cmd_result = validate_command(&user_entry);
+        // error handling using match
+        let cmd_result = file_action_constant::validate_command(&user_entry);
         match cmd_result {
             Err(err) => {
                 println!("ERROR. {}", err);
@@ -80,16 +42,23 @@ fn run_program() -> Result<(), String> {
 
         // check command
         match cmd {
-            Command::PrintFiles => {
-                println!("print files ...")
+            file_action_constant::Command::PrintFiles => {
+                // error handling using operator ?
+                file_manager::print_files()?;
             },
-            Command::ReadFile => {
-                println!("read file ...")
+            file_action_constant::Command::CreateFile => {
+                // error handling using operator ?
+                file_manager::create_file()?;
             },
-            Command::DeleteFile => {
-                println!("delete file ...")
+            file_action_constant::Command::ReadFile => {
+                // error handling using operator ?
+                file_manager::read_file()?;
             },
-            Command::ExitProgram => {
+            file_action_constant::Command::DeleteFile => {
+                // error handling using operator ?
+                file_manager::delete_file()?;
+            },
+            file_action_constant::Command::ExitProgram => {
                 println!("Exiting program ...");
                 return Ok(());
             },
@@ -98,6 +67,5 @@ fn run_program() -> Result<(), String> {
 }
 
 fn main() {
-    print_welcome_message();
     let _ = run_program();
 }
