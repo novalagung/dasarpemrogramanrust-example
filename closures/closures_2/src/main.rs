@@ -12,13 +12,13 @@ fn main() {
     };
 
     // closure tanpa parameter dan return value bertipe Vec<String>
-    let do_something_v3 = | | -> Vec<String> {
+    let do_something_v3 = || -> Vec<String> {
         // ...
         Vec::new()
     };
 
     // closure tanpa parameter dan tanpa return value
-    let do_something_v4 = | | {
+    let do_something_v4 = || {
         // ...
     };
 

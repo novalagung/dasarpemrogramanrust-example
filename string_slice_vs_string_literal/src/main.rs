@@ -1,12 +1,12 @@
 fn main() {
     // {
-    //     let str1 = String::from("Lisa BlackPink");
+    //     let str1 = String::from("Lisa Blackpink");
     //     println!("str1: {str1}");
     // }
 
     // {
-    //     let bytes = vec![69, 108, 117, 118, 101, 105, 116, 105, 101, 32, 240, 159, 164, 152];
-    //     let str2 = String::from_utf8(bytes)
+    //     let bytes = vec![69, 108, 117, 118, 101, 105, 116, 105, 101, 32, 243, 159, 164, 152];
+    //     let str2 = String::from_utf8(bytes).unwrap();
     //     println!("str2: {}", str2);
     // }
 

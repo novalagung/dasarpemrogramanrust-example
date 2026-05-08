@@ -24,7 +24,7 @@ impl Car {
         }
     }
 
-    pub fn say_hello(&self, name: String) {
+    pub fn congratulate(&self, name: String) {
         println!("hello {}", name);
         println!("congrats with your new car {}", self.info());
         println!("vroooom vroooooooommmmm!");

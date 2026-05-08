@@ -10,7 +10,7 @@ fn main() {
     let info = car.info();
     println!("info: {:?}", info);
 
-    // car.congratulate(String::from("Sylvanas Windrunner"));
+    car.congratulate(String::from("Sylvanas Windrunner"));
 
     car.set_manufacture_year(2013);
     let detailed_info = car.info();

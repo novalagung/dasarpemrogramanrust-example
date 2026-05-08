@@ -1,6 +1,6 @@
 fn main() {
     // ini adalah komentar
-    // komentar tidak akan di-eksekusi
+    // komentar tidak akan dieksekusi
     println!("hello");
     
     /*

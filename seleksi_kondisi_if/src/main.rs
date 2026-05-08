@@ -1,12 +1,12 @@
 fn main() {
     let number_a = 3;
     if number_a < 5 {
-        println!("number_a adalah dibawah 5");
+        println!("number_a adalah di bawah 5");
     }
 
     let result_a = number_a >= 5;
     if result_a {
-        println!("result_a adalah diatas atau sama dengan 5");
+        println!("result_a adalah di atas atau sama dengan 5");
     }
 
     // -----------------------

@@ -9,7 +9,7 @@ fn main() {
 
     // ==========================
 
-    // let mut tuple_b: (&str, i32, [&str; 2], bool) = ("", 0, [""; 2], false);
+    // let mut tuple_b: (&str, i32, [&str; 2], bool) = ("default", 0, [""; 2], false);
     // tuple_b.0 = "damian";
     // tuple_b.1 = 18;
     // tuple_b.2 = ["gaming", "adventuring"];

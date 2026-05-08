@@ -49,6 +49,6 @@ fn main() {
     // // output => true true
 
     let (bool_left, bool_right) = (false, true);
-    println!("AND result \t: {}", bool_left || bool_right);
-    println!("OR result \t: {}", bool_left && bool_right);
+    println!("AND result \t: {}", bool_left && bool_right);
+    println!("OR result \t: {}", bool_left || bool_right);
 }

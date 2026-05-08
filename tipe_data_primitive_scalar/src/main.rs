@@ -1,6 +1,6 @@
 fn main() {
     let numerik1 = 24;
-    let numerik2: i8 = 127;
+    let numerik2: i8 = 2;
     let numerik3: i64 = 12;
     println!("{} | {} | {}", numerik1, numerik2, numerik3);
     
@@ -22,6 +22,6 @@ fn main() {
     let c3 = '2';
     println!("{} | {} | {}", c1, c2, c3);
 
-    let ptr1: &i32 = &123;
+    let ptr1: &i32 = &24;
     println!("{}", ptr1);
 }
