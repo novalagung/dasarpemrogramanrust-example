@@ -33,8 +33,7 @@ fn main() {
 
     {
         let str6: &str = "John Towner Williams";
-        let mut str6_slice1: String = str6.to_string();
-        str6_slice1 = String::from("sdfsdfsdf");
+        let str6_slice1: String = str6.to_string();
         println!("str6: {str6}");
         println!("str6_slice1: {str6_slice1}");
         println!("str6: {str6}");

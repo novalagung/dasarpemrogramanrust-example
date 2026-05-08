@@ -36,7 +36,7 @@ fn main() {
 }
 
 fn greet() {
-    println!("hello world")
+    println!("hello world");
 }
 
 fn greet_custom_message(name: &str, message: &str) {
