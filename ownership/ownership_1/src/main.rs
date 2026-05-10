@@ -5,6 +5,7 @@ fn main() {
 
     let a = String::from("hello rust");
     let b = a;
+    // expected compile error: `a` was moved into `b`
     println!("a: {:?}, b: {:?}", a, b);
 
     #[derive(Debug)]

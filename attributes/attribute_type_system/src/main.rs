@@ -24,6 +24,7 @@ fn main() {
         _ => println!("stronk"),
     }
 
+    // expected compile error: wildcard pattern is required for this non_exhaustive enum
     match value {
         Superhero::Superman => println!("stronk"),
         Superhero::OmniMan => println!("stronk"),

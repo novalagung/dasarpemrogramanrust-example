@@ -7,7 +7,7 @@ mod utilities {
             
             const CHARSET: &[u8] = "abcdefghijklmnopqrstuvwxyz".as_bytes();
             let mut arr = Vec::new();
-            for _ in 0..=length {
+            for _ in 0..length {
                 let n = rand::thread_rng().gen_range(0..(CHARSET.len()));
                 let char = CHARSET[n];
                 arr.push(char);

@@ -18,6 +18,14 @@ mod util {
     }
 }
 
+#[cfg(target_os = "macos")]
+mod util {
+
+    pub fn say_hello() {
+        println!("hello (from macos)")
+    }
+}
+
 
 fn main() {
     util::say_hello();
