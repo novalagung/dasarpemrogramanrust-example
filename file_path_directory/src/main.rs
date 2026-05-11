@@ -61,7 +61,7 @@ fn main() {
     {
         let path = Path::new("./files").join("target.txt");
         let content = "hello rust!";
-        let res = fs::write(&path, &content);
+        let res = fs::write(&path, content);
 
         match res {
             Err(err) => {
