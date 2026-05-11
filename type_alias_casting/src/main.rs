@@ -31,6 +31,15 @@ fn main() {
 
         let new_number = 23.4 as f32;
         println!("new_number: {new_number}");
+
+        let letter = 'A';
+        println!("letter: {letter}");
+
+        let letter_in_u32 = letter as u32;
+        println!("letter_in_u32: {letter_in_u32}");
+
+        let letter_in_u8 = letter as u8;
+        println!("letter_in_u8: {letter_in_u8}");
     }
 
     // A.27.4 - Konsekuensi casting tipe numerik
