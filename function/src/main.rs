@@ -17,6 +17,10 @@ fn main() {
 
     // A.17.4 - return value without return keyword
     let name2 = "Damian";
+    let width = 5;
+    let height = 8;
+    let length = 12;
+
     let res2 = calculate_box_volume2(width, height, length);
     println!("hi {name2}, the box volume is {res2}");
 
