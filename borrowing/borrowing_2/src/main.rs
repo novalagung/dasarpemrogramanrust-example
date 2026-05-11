@@ -24,6 +24,32 @@ fn main() {
         *fact_four = String::from("Is it Zovaal or Primus?");
         println!("{:?}", fact_one);
     }
+
+    // A.35.7 - Owner dan borrower data literal
+    {
+        let number = 12;
+        let a = &number;
+
+        let text = String::from("hello");
+        let b = &text;
+
+        println!("{:?} {:?}", a, b);
+
+        let c = &24;
+        let d = &false;
+        let e = &String::from("rust");
+
+        println!("{:?} {:?} {:?}", c, d, e);
+    }
+
+    // A.35.8 - Borrowing pada macro `println`
+    {
+        let str1 = String::from("luwe");
+        println!("{:?}", str1);
+
+        let str2 = String::from("ngelak");
+        println!("{:?}", &str2);
+    }
 }
 
 fn change_value(txt: &mut String) {

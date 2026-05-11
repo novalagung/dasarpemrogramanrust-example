@@ -1,7 +1,7 @@
 struct User {
     name: String,
     sign_in_count: u64,
-    affliation: Vec<String>,
+    affiliation: Vec<String>,
     active: bool,
 }
 
@@ -36,7 +36,7 @@ fn main() {
     let user_one = User {
         name: String::from("Orgrim Doomhammer"),
         sign_in_count: 12,
-        affliation: vec![
+        affiliation: vec![
             String::from("Warchief of the Horde"),
             String::from("Blackrock Chieftain"),
             String::from("The Doomhammer"),
@@ -46,14 +46,14 @@ fn main() {
 
     println!("name: {}", user_one.name);
     println!("sign-in count: {}", user_one.sign_in_count);
-    println!("affliation: {:?}", user_one.affliation);
+    println!("affiliation: {:?}", user_one.affiliation);
     println!("is active? {}", user_one.active);
 
     // A.23.3 - mutable struct
     let mut user_two = User {
         name: String::from("Varian Wrynn"),
         sign_in_count: 12,
-        affliation: vec![
+        affiliation: vec![
             String::from("High King of the Alliance"),
             String::from("King of Stormwind"),
             String::from("Champion of the Crimson Ring"),
@@ -62,12 +62,12 @@ fn main() {
     };
 
     user_two.name = String::from("Anduin Wrynn");
-    user_two.affliation.pop();
+    user_two.affiliation.pop();
     user_two.active = true;
 
     println!("name: {}", user_two.name);
     println!("sign-in count: {}", user_two.sign_in_count);
-    println!("affliation: {:?}", user_two.affliation);
+    println!("affiliation: {:?}", user_two.affiliation);
     println!("is active? {}", user_two.active);
 
     // A.23.4 - type inference / manifest typing
