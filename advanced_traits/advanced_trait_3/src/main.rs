@@ -5,6 +5,7 @@ use crate::calculation_spec::Area;
 use crate::calculation_spec::Circumference;
 
 fn main() {
+    // A.37.6 - Trait sebagai return type
     let circle_one = new_circle(5);
     calculate_and_print_result6("circle".to_string(), &circle_one);
 
@@ -12,6 +13,7 @@ fn main() {
     calculate_and_print_result7("square".to_string(), &square_one);
 }
 
+// A.37.6 - Fungsi dengan return type impl Area
 fn new_circle(radius: i32) -> impl Area {
     let data = two_dimensional::Circle{
         radius
@@ -19,6 +21,7 @@ fn new_circle(radius: i32) -> impl Area {
     data
 }
 
+// A.37.6 - Fungsi dengan return type impl Area + Circumference
 fn new_square(length: i32) -> impl Area + Circumference {
     two_dimensional::Square{
         length

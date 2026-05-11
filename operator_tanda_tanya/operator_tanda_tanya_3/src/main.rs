@@ -1,3 +1,4 @@
+// A.41.1 - Refactor ke-3: mengecek error dengan match pada do_some_math
 fn main() {
     match do_some_math() {
         Err(m) => println!("ERROR! {:?}", m),

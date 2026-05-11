@@ -1,10 +1,9 @@
-// definisi konstanta
+// A.26.1, A.26.2, A.26.3 - definisi enum & seleksi kondisi
 const SuperheroSuperman: &str = "superman";
 const SuperheroOmniMan: &str = "omniman";
 const SuperheroHomelander: &str = "homelander";
 const SuperheroHyperion: &str = "hyperion";
 
-// definisi enum
 enum Superhero {
     Superman,
     OmniMan,
@@ -18,12 +17,13 @@ fn main() {
     let value3: Superhero = Superhero::Superman;
     let value4 = Superhero::OmniMan;
 
+    // A.26.3 - seleksi kondisi pada konstanta (valid)
     if value1 == SuperheroSuperman {
         println!("hello superman!");
     }
 
-    // baris dibawah ini menghasilkan error
-    if value3 == Superhero::Superman {
-        println!("hello superman!");
-    }
+    // A.26.3 - seleksi kondisi pada enum (error, tidak memiliki PartialEq)
+    // if value3 == Superhero::Superman {
+    //     println!("hello superman!");
+    // }
 }

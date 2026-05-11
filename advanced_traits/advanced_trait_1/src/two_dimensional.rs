@@ -1,3 +1,4 @@
+// A.37.1 - Struct Circle dengan implementasi trait Area
 pub struct Circle {
     pub radius: i32,
 }
@@ -8,6 +9,7 @@ impl crate::calculation_spec::Area for Circle {
     }
 }
 
+// A.37.1 - Struct Square dengan implementasi trait Area
 pub struct Square {
     pub length: i32,
 }

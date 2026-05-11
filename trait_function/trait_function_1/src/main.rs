@@ -1,5 +1,5 @@
+// A.49.1 - Trait Fn
 fn main() {
-    // Fn
     {
         let pow_number = |n: i32| n.pow(2);
 
@@ -9,10 +9,10 @@ fn main() {
     }
     {
         let result = do_something_with_number_v1(13, |d: i32| d * 2);
-        println!("result: {:?}", result);
+        println!("result: {result}");
     }
 
-    // FnMut
+    // A.49.2 - Trait FnMut
     {
         let mut x = 5;
         {
@@ -27,15 +27,7 @@ fn main() {
         println!("number: {number}");
     }
 
-    // FnOnce
-    {
-        let mut x = 5;
-        {
-            let mut square_x = || x *= x;
-            square_x();
-        }
-        println!("result: {}", x);
-    }
+    // A.49.3 - Trait FnOnce
     {
         let mut number = 1;
         do_something_with_number_v3(14, |x| number += x);

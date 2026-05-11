@@ -1,3 +1,5 @@
+// A.48.7 - Closure sebagai parameter fungsi
+
 fn main() {
     {
         run_x_times(4, |i: i32| println!("hello rust {i}"));
@@ -8,12 +10,12 @@ fn main() {
         let number_to_find = 53;
         let index = find_index(&numbers, |e: &i32| -> bool {
             if *e == number_to_find {
-               true 
+                true
             } else {
                 false
             }
         });
-    
+
         println!("number_to_find: {number_to_find}");
         println!("index: {index}");
     }

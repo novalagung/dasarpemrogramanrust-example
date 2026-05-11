@@ -1,5 +1,5 @@
-
 fn main() {
+    // A.48.2 - Notasi penulisan closure
     // closure dengan 2 parameter tanpa return value
     let do_something_v1 = | a: i32, b: String | {
         // ...
@@ -22,9 +22,12 @@ fn main() {
         // ...
     };
 
+    // closure tanpa parameter dengan isi hanya return value
     let get_pi = || 3.14;
 
-    
+    println!("{:?}", get_pi());
+
+    // fungsi dan closures ekuivalen
     fn pow_v1(x: i32) -> i32 {
         x.pow(2)
     }
@@ -36,4 +39,5 @@ fn main() {
     };
     let pow_v4 = |x: i32| x.pow(2);
 
+    println!("{} {} {} {}", pow_v1(3), pow_v2(3), pow_v3(3), pow_v4(3));
 }

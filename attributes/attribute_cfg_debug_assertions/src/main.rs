@@ -1,3 +1,4 @@
+// A.51.3 - Configuration debug_assertions
 fn main() {
     #[cfg(debug_assertions)]
     {

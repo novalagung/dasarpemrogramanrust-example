@@ -1,10 +1,11 @@
+// A.48.6 - Closure sebagai return type
 fn main() {
     {
         let my_closure = do_something();
         println!("hello (from main)");
         my_closure();
     }
-    
+
     {
         let my_closure = do_something_v2();
         let message = my_closure(123, "hello rust".to_owned());

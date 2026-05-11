@@ -1,3 +1,4 @@
+// A.51.5 - Attribute type system
 const SuperheroSuperman: &str = "superman";
 const SuperheroOmniMan: &str = "omniman";
 const SuperheroHyperion: &str = "hyperion";
@@ -25,8 +26,8 @@ fn main() {
     }
 
     // expected compile error: wildcard pattern is required for this non_exhaustive enum
-    match value {
-        Superhero::Superman => println!("stronk"),
-        Superhero::OmniMan => println!("stronk"),
-    }
+    // match value {
+    //     Superhero::Superman => println!("stronk"),
+    //     Superhero::OmniMan => println!("stronk"),
+    // }
 }

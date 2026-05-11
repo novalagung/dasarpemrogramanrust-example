@@ -1,16 +1,18 @@
 fn main() {
+    // A.34.4 - Copy semantics
     let x = 24;
     let y = x;
     println!("x: {:?}, y: {:?}", x, y);
 
-    let a = String::from("hello rust");
-    let b = a;
-    // expected compile error: `a` was moved into `b`
-    println!("a: {:?}, b: {:?}", a, b);
+    // Error: move semantics (String)
+    // let a = String::from("hello rust");
+    // let b = a;
+    // println!("a: {:?}, b: {:?}", a, b);
 
-    #[derive(Debug)]
-    struct MyStruct;
-    let g = MyStruct{};
-    let h = g;
-    println!("g: {:?}, h: {:?}", g, h);
+    // Error: move semantics (struct)
+    // #[derive(Debug)]
+    // struct MyStruct;
+    // let g = MyStruct{};
+    // let h = g;
+    // println!("g: {:?}, h: {:?}", g, h);
 }

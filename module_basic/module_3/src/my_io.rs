@@ -1,3 +1,4 @@
+// A.20.4 - module item: fungsi read_entry
 pub fn read_entry() -> String {
     let mut message = std::string::String::new();
     let stdin_reader = std::io::stdin();

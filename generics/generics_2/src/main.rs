@@ -1,9 +1,11 @@
+// A.38.5 - Generics struct
 struct Point<T, U> {
     x: T,
     y: T,
     z: U
 }
 
+// A.38.6 - Generics method
 impl<T, U> Point<T, U> {
 
     fn get_x(&self) -> &T {
@@ -19,7 +21,7 @@ impl<T, U> Point<T, U> {
     }
 }
 
-
+// A.38.7 - Method khusus untuk spesifik tipe parameter generic tertentu
 // impl Point<i32, f64> {
 
 //     fn get_x(&self) -> &i32 {
@@ -35,6 +37,7 @@ impl<T, U> Point<T, U> {
 //     }
 // }
 
+// A.38.8 - Generics enum
 enum Kendaraan<T> {
     Skateboard,
     SepedaPancal,

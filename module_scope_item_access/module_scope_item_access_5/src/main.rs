@@ -1,3 +1,4 @@
+// A.22.7 - praktik lanjutan
 fn my_func() {
     println!("call `my_func()`");
 }
@@ -29,32 +30,32 @@ mod module_b {
             println!("call `module_b::submodule_b_two::my_func()`");
 
             // current module scope adalah module `submodule_b_two`.
-            // keyword `super` disini mengarah ke parent scope, yaitu `module`.
+            // keyword `super` di sini mengarah ke parent scope, yaitu `module`.
             //
             // statement `super::my_func()` berikut adalah
             // ekuivalen dengan `module_b::my_func()`
-            // jika diakses dari root atau scope terluar.
+            // jika diakses dari crate root.
             super::my_func();
             //
             // statement `super::submodule_b_one::my_func()` berikut adalah
             // ekuivalen dengan `module_b::submodule_b_one::my_func()`
-            // jika diakses dari root atau scope terluar.
+            // jika diakses dari crate root.
             super::submodule_b_one::my_func();
         }
     }
-    
+
     // path item ➜ `module_b::my_func`.
     // fungsi ini tidak publik, jadi hanya bisa diakses dalam scope module `module_b` saja.
     fn my_func() {
         println!("call `module_b::my_func()`");
     }
-    
+
     // path item ➜ `module_b::run_all_funcs`.
     pub fn run_all_funcs() {
 
         // semua fungsi yang didefinisikan akan di call dalam blok kode ini.
         print!("call `my::run_all_funcs()`");
-        
+
         // keyword `self` merepresentasikan current module scope.
         // menjadikan dua statement berikut adalah ekuivalen:
         // `my_func()` adalah ekuivalen dengan `self::my_func()`.
@@ -62,15 +63,15 @@ mod module_b {
         self::my_func();
 
         // current module scope adalah `module_b`.
-        // keyword `super` disini mengarah ke parent scope, yaitu root atau scope paling luar.
+        // keyword `super` di sini mengarah ke parent scope, yaitu root atau scope paling luar.
         //
         // statement `super::my_func()` berikut adalah
-        // memanggil fungsi `my_func` yang ada di root scope,
+        // memanggil fungsi `my_func` yang ada di crate root,
         // yang deklarasinya satu level dengan fungsi `main`.
         super::my_func();
         //
         // statement `super::module_a::my_func()` berikut adalah
-        // memanggil fungsi `my_func` milik module `module_a` yang ada di root scope.
+        // memanggil fungsi `my_func` milik module `module_a` yang ada di crate root.
         super::module_a::my_func();
         //
         // module `submodule_b_two` bisa diakses menggunakan self ataupun tidak

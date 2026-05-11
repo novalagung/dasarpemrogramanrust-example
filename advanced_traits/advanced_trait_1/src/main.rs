@@ -4,12 +4,25 @@ mod two_dimensional;
 use crate::calculation_spec::Area;
 
 fn main() {
-    // let circle_one = two_dimensional::Circle{ radius: 10 };
-    // println!("circle area: {}", circle_one.calculate_area());
+    // A.37.1 - Error: trait `Area` belum di-import
+    // {
+    //     let circle_one = two_dimensional::Circle{ radius: 10 };
+    //     println!("circle area: {}", circle_one.calculate_area());
 
-    // let square_one = two_dimensional::Square{ length: 5 };
-    // println!("square area: {}", square_one.calculate_area());
+    //     let square_one = two_dimensional::Square{ length: 5 };
+    //     println!("square area: {}", square_one.calculate_area());
+    // }
 
+    // A.37.1 - Setelah menambahkan `use crate::calculation_spec::Area;`
+    // {
+    //     let circle_one = two_dimensional::Circle{ radius: 10 };
+    //     println!("circle area: {}", circle_one.calculate_area());
+
+    //     let square_one = two_dimensional::Square{ length: 5 };
+    //     println!("square area: {}", square_one.calculate_area());
+    // }
+
+    // A.37.2 - Trait sebagai tipe parameter
     let circle_one = two_dimensional::Circle{ radius: 10 };
     calculate_and_print_result("circle".to_string(), &circle_one);
 

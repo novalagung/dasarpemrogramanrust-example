@@ -1,3 +1,4 @@
+// A.37.7 - Associated types pada trait
 pub trait Shape {
     type Area;
 
