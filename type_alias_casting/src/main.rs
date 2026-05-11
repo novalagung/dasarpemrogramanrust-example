@@ -18,18 +18,6 @@ fn main() {
         println!("height_in_u64: {height_in_u64}");
     }
 
-    {
-        let p = Point { x: 0, y: 10 };
-        println!("p: {:?}", p);
-
-        let mut q: Coordinate = p as Coordinate;
-        q.x = 12;
-        println!("q: {:?}", q);
-
-        let r: Point = q as Point;
-        println!("r: {:?}", r);
-    }
-
     // A.27.3 - Casting antar tipe scalar
     {
         let number = 32;
@@ -53,5 +41,18 @@ fn main() {
         println!("timestamp (u64): {timestamp}");
         println!("timestamp (as u16): {}", timestamp as u16);
         println!("from u16 back to u64: {}", (timestamp as u16) as u64);
+    }
+
+    // A.27.5 - Type alias bukan casting
+    {
+        let p = Point { x: 0, y: 10 };
+        println!("p: {:?}", p);
+
+        let mut q: Coordinate = p;
+        q.x = 12;
+        println!("q: {:?}", q);
+
+        let r: Point = q;
+        println!("r: {:?}", r);
     }
 }
