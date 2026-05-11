@@ -1,3 +1,4 @@
+// A.55.1 - Deklarasi konstanta, command, dan validasi command
 pub const FOLDER_BASEPATH: &str = "./files";
 
 pub enum Command {

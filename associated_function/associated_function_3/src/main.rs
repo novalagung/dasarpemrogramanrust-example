@@ -1,3 +1,4 @@
+// A.24.5 - tuple struct associated function
 mod model;
 
 fn main() {
@@ -6,7 +7,8 @@ fn main() {
     let blue = model::Color::blue();
 
     println!("{:#?} {:#?} {:#?}", red, green, blue);
-    
+
+    // A.24.5 - menggunakan associated function new (fields private)
     let random_color = model::Color::new(12, 25, 47);
     println!("{:#?} ", random_color);
 }

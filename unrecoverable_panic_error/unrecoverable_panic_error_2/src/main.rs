@@ -1,3 +1,4 @@
+// A.54.2 - Macro panic!()
 use std::io;
 use std::io::Write;
 

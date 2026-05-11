@@ -1,3 +1,4 @@
+// A.51.3 - Macro cfg!() dan conditional compilation
 fn main() {
     #[cfg(target_os = "linux")]
     {

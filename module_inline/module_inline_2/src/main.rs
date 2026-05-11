@@ -1,5 +1,7 @@
+// A.21.4 - normal module declaration (inline submodules in utilities.rs)
 mod utilities;
 
+// A.21.4 - main
 fn main() {
     let password = format!("zereth mortis {}", utilities::random::string(10));
     println!("raw password: {}", password);

@@ -1,3 +1,4 @@
+// A.41.1 - Refactor ke-2: menggunakan operator ? dengan return type Result
 fn main() {
     do_some_math();
 }

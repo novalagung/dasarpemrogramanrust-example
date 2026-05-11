@@ -1,3 +1,4 @@
+// A.21.5 - submodule utilities::random (via #[path])
 pub fn string(length: u32) -> String {
     use rand::Rng;
     

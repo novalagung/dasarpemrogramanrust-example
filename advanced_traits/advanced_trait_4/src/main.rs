@@ -5,6 +5,7 @@ mod square;
 use crate::shape::Shape;
 
 fn main() {
+    // A.37.7 - Mengakses method dari trait Shape via associated types
     let obj1 = circle::Circle{ radius: 10.0 };
     println!("area of circle: {:.2}", obj1.area());
 

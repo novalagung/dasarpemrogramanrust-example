@@ -1,15 +1,17 @@
-
+// A.44.7 - Lifetime pada struct (single lifetime)
 // struct Book<'abc> {
 //     title: &'abc str,
 //     description: &'abc str,
 // }
 
+// A.44.7 - Lifetime pada struct (multi lifetime)
 struct Book<'abc, 'def> {
     title: &'abc str,
     description: &'abc str,
     price: &'def i32,
 }
 
+// A.44.8 - Lifetime pada method
 impl<'abc, 'def> Book<'abc, 'def> {
 
     fn get_info(&self) -> String {
@@ -22,6 +24,7 @@ impl<'abc, 'def> Book<'abc, 'def> {
     }
 }
 
+// A.44.8 - Fungsi dengan lifetime annotation
 fn get_book_price<'ghi>(book: &'ghi Book) -> &'ghi i32 {
     book.get_price()
 }

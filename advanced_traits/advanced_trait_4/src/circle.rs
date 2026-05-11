@@ -1,3 +1,4 @@
+// A.37.7 - Struct Circle dengan implementasi Shape (associated type Area = f64)
 pub struct Circle {
     pub radius: f64,
 }

@@ -1,3 +1,4 @@
+// A.51.2 - Attribute derive
 const SuperheroSuperman: &str = "superman";
 const SuperheroOmniMan: &str = "omniman";
 const SuperheroHyperion: &str = "hyperion";

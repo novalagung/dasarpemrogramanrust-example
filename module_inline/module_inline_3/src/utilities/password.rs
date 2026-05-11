@@ -1,3 +1,4 @@
+// A.21.5 - submodule utilities::password (via #[path])
 pub fn hash(text: &str) -> String {
     let result = bcrypt::hash(text, bcrypt::DEFAULT_COST).unwrap();
     result

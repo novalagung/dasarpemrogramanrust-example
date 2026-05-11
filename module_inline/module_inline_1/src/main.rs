@@ -1,3 +1,4 @@
+// A.21.2 - inline module utilities
 mod utilities {
 
     pub mod random {
@@ -31,6 +32,7 @@ mod utilities {
     }
 }
 
+// A.21.2 - main: implementasi inline module
 fn main() {
     let password = format!("zereth mortis {}", utilities::random::string(10));
     println!("raw password: {}", password);

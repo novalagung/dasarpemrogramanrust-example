@@ -1,4 +1,5 @@
 fn main() {
+    // A.18.4 - absolute path untuk akses item
     // tampilkan intro untuk user agar menginput sebuah pesan
     println!("enter a message:");
 
@@ -21,3 +22,10 @@ fn main() {
     // tampilkan pesan inputan user
     println!("message: {}", message);
 }
+
+// A.18.5 - import path menggunakan keyword use
+
+// use std::io;
+// use std::io::stdin;
+// use std::io::{stdin, stderr};
+// use std::io::*;

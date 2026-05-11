@@ -1,3 +1,4 @@
+// A.55.1 - Fungsi utilitas pembacaan inputan user & flush stdout
 use std::io;
 use std::io::Write;
 

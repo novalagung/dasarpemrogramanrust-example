@@ -1,3 +1,4 @@
+// A.33.6 - Karakteristik pointer & reference
 use rand::Rng;
 
 fn main() {

@@ -1,9 +1,11 @@
+// A.55.1 - Action command implementations
 use crate::file_action_constant;
 use crate::file_utility;
 
 use std::path::Path;
 use std::fs;
 
+// Command::PrintFiles
 pub fn print_files() -> Result<(), String> {
     let path = Path::new(file_action_constant::FOLDER_BASEPATH);
 
@@ -49,6 +51,7 @@ pub fn print_files() -> Result<(), String> {
     Ok(())
 }
 
+// Command::CreateFile
 pub fn create_file() -> Result<(), String> {
     let path = Path::new(file_action_constant::FOLDER_BASEPATH);
 
@@ -89,6 +92,7 @@ pub fn create_file() -> Result<(), String> {
     Ok(())
 }
 
+// Command::ReadFile
 pub fn read_file() -> Result<(), String> {
     let path = Path::new(file_action_constant::FOLDER_BASEPATH);
 
@@ -119,6 +123,7 @@ pub fn read_file() -> Result<(), String> {
     Ok(())
 }
 
+// Command::DeleteFile
 pub fn delete_file() -> Result<(), String> {
     let path = Path::new(file_action_constant::FOLDER_BASEPATH);
 

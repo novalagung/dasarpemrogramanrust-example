@@ -1,4 +1,5 @@
 fn main() {
+    // A.45.1 - Konsep slice
     {
         let data_arr = [1, 2, 3];
         println!("data_arr: {} {:?}", data_arr.len(), data_arr);
@@ -26,6 +27,7 @@ fn main() {
         println!("slice2  : {} {:?}", slice2.len(), slice2);
     }
 
+    // A.45.2 - Memory management pada slice
     {
         let data_str = String::from("sesuk preiii");
         println!("data_str: {:?}", data_str);
@@ -35,6 +37,7 @@ fn main() {
         println!("slice2  : {:?}", slice2);
     }
 
+    // A.45.2 - Mutable slice
     {
         let mut numbers = [24, 12, 8, 7, 9, 2];
         println!("numbers: {:?}", numbers);

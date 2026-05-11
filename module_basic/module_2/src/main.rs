@@ -1,3 +1,4 @@
+// A.20.3 - definisi module my_io dan my_number
 // definisi module my_io
 mod my_io;
 
@@ -7,6 +8,7 @@ mod my_number;
 // fungsi main
 fn main() {
 
+    // A.20.3 - praktik normal module (nama_module.rs & nama_module/mod.rs)
     // tampilkan pesan untuk user agar menginput angka
     println!("enter any number:");
 

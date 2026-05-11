@@ -1,3 +1,4 @@
+// A.19.3 - praktik program menampilkan angka random
 use rand::Rng;
 
 fn generate_random_number() -> i32 {

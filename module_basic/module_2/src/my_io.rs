@@ -1,3 +1,4 @@
+// A.20.3 - module item: fungsi read_entry
 pub fn read_entry() -> String {
     // variabel yang akan menampung inputan user dalam string
     let mut message = std::string::String::new();

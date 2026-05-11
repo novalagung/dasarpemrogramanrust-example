@@ -1,5 +1,6 @@
+// A.22.3 - self keyword and crate root
 mod my_mod {
-    
+
     pub fn run_the_app(note: &str) {
         println!("calling `my_mod::run_the_app()`. note {}", note);
     }

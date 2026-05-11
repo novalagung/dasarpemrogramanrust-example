@@ -1,3 +1,4 @@
+// A.37.7 - Struct Square dengan implementasi Shape (associated type Area = i64)
 pub struct Square {
     pub side: i64,
 }

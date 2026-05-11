@@ -1,3 +1,4 @@
+// A.21.4 - inline submodules in utilities.rs
 pub mod random {
 
     pub fn string(length: u32) -> String {

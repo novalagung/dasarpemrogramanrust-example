@@ -1,40 +1,43 @@
+// A.53.1 - File path
+// A.53.2 - Method filepath
 use std::path::Path;
 use std::fs;
 
 fn main() {
     {
-        // let filepath_1 = "/home/novalagung/Desktop/my text.txt";
-        // let filepath_2 = Path::new("/home/novalagung/Desktop/my text.txt");
-        // let filepath_3 = Path::new("/home/novalagung/Desktop").join("my text.txt");
-        // let filepath_4 = Path::new("/home/novalagung").join("Desktop").join("my text.txt");
-        // let filepath_5 = Path::new("/home").join("novalagung/Desktop/my text.txt");
-    
-        // println!("{:?}", filepath_1);
-        // println!("{:?}", filepath_2);
-    
+        let filepath_1 = "/home/novalagung/Desktop/my text.txt";
+        let filepath_2 = Path::new("/home/novalagung/Desktop/my text.txt");
+        let filepath_3 = Path::new("/home/novalagung/Desktop").join("my text.txt");
+        let filepath_4 = Path::new("/home/novalagung").join("Desktop").join("my text.txt");
+        let filepath_5 = Path::new("/home").join("novalagung/Desktop/my text.txt");
+
+        println!("{:?}", filepath_1);
+        println!("{:?}", filepath_2);
+
         let path = Path::new("/home/novalagung").join("Desktop").join("my text.txt");
-    
+
         if Path::new(&path).exists() {
             // path exists
         }
-    
+
         if Path::new(&path).is_file() {
             // path is a file
         }
-    
+
         if Path::new(&path).is_dir() {
             // path contains directory
         }
-    
+
         if Path::new(&path).is_absolute() {
             // path is an absolute path
         }
-    
+
         if Path::new(&path).is_relative() {
             // path is a relative path
         }
     }
 
+    // A.53.3 - Module std::fs (file system)
     {
         let path = "./files";
         let res = fs::create_dir(&path);
@@ -52,11 +55,14 @@ fn main() {
         }
     }
 
+    // A.53.4 - Manajemen file system
+    // Pembuatan folder (fs::create_dir)
+    // Menulis konten file (fs::write)
     {
         let path = Path::new("./files").join("target.txt");
         let content = "hello rust!";
         let res = fs::write(&path, &content);
-        
+
         match res {
             Err(err) => {
                 println!("error on writing file {}! {}", path.to_str().unwrap_or_default(), err);
@@ -67,10 +73,11 @@ fn main() {
         }
     }
 
+    // Membaca isi file ke bentuk string (fs::read_to_string)
     {
         let path = Path::new("./files").join("target.txt");
         let res = fs::read_to_string(&path);
-        
+
         match res {
             Err(err) => {
                 println!("error on reading file {}! {}", path.to_str().unwrap_or_default(), err);
@@ -81,6 +88,7 @@ fn main() {
         }
     }
 
+    // Membaca isi file ke bentuk vector (fs::read)
     {
         let path = Path::new("./files").join("target.txt");
         let res = fs::read(&path);
@@ -89,7 +97,7 @@ fn main() {
             println!("error on reading file");
             return;
         }
-        
+
         let content = res.unwrap_or_default();
         match std::str::from_utf8(&content) {
             Err(err) => {
@@ -101,6 +109,7 @@ fn main() {
         };
     }
 
+    // Menghapus file (fs::remove_file)
     {
         let path = Path::new("./files").join("target.txt");
         let res = fs::remove_file(&path);
@@ -115,6 +124,7 @@ fn main() {
         }
     }
 
+    // Menghapus folder (fs::remove_dir)
     {
         let path = Path::new("./files");
         let res = fs::remove_dir(&path);
@@ -129,6 +139,7 @@ fn main() {
         }
     }
 
+    // List items dalam folder (fs::read_dir)
     {
         let path = Path::new("D:\\Labs\\Adam Studio\\Ebook\\dasarpemrogramanrust\\file_path_directory_1");
         let paths = fs::read_dir(&path).unwrap();

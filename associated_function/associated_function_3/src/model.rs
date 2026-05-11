@@ -1,8 +1,8 @@
+// A.24.5 - tuple struct Color dengan associated functions
 #[derive(Debug)]
 pub struct Color(i32, i32, i32);
 
 impl Color {
-
     pub fn new(r: i32, g: i32, b: i32) -> Self {
         Self(r, g, b)
     }

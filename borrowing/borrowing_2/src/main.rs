@@ -1,10 +1,12 @@
 fn main() {
+    // A.35.5 - Borrowing valid/invalid reference
     let mut fact_one = String::from("Arthas is the true lich king");
     println!("{:?}", fact_one);
 
     change_value(&mut fact_one);
     println!("{:?}", fact_one);
 
+    // A.35.6 - Borrowing pada block
     {
         let fact_two = &mut fact_one;
         *fact_two = String::from("There must always be a lich king");

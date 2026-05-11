@@ -1,3 +1,4 @@
+// A.21.5 - inline module with path attribute
 mod utilities {
     #[path = "random.rs"]
     pub mod random;
@@ -6,6 +7,7 @@ mod utilities {
     pub mod password;
 }
 
+// A.21.5 - main
 fn main() {
     let password = format!("zereth mortis {}", utilities::random::string(10));
     println!("raw password: {}", password);
